@@ -121,3 +121,4 @@ condicion =True
 while condicion:
     cant=input(" igrese la cantidad de notas: ")
     if cant="cant"
+
