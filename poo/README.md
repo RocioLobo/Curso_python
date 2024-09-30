@@ -36,3 +36,5 @@ En el proceso de diseño de una clase hay que tener en cuenta `el principio de r
 > *Un paradigma de programación en un método, técnica o estilo de programar. Muchos de los lenguajes de programación son creados en base a un paradigma, ejemplo `java` es un lenguaje que adopta el paradigma `POO`(Programación Orientada a Objeto). Sin embargo existen lenguajes de programación que adoptan varios paradigmas como es el caso de python y javascript, estos son lenguajes multiparadigmas.
 
 
+![alt text](image-2.png)
+
