@@ -4,34 +4,44 @@
 #sus atributos seran nombre,apellido,dni,numero de cuenta y saldo inicial
 #como metodos podremos hacer deposito retirar dinero y ver estado de cuenta.
 
-
 #crear una clase banco
-class banco:
+class Banco:
 #sus atributos seran nombre,apellido,dni,numero de cuenta y saldo inicial
-    def __init__ (self,nombre,apellido,dni,numero_cuenta,saldo_inicial):
-        self.nombre=nombre
-        self.apellido=apellido
-        self.dni=dni
-        self.numero_cuenta=numero_cuenta
-        self.saldo_inicial=saldo_inicial
+    def _init_(self, nombre, apellido, dni, numero_cuenta, saldo_inicial):
+        self.nombre = nombre
+        self.apellido = apellido
+        self.dni = dni
+        self.numero_cuenta = numero_cuenta
+        self.saldo = saldo_inicial
 #como metodos podremos hacer deposito retirar dinero y ver estado de cuenta.
-#metodos
-def depositar(self,cantidad):
-    if cantidad > 0:
-        self.saldo_inicial=self.saldo_inicial+cantidad
-        resultado=f"deposito realizado: {self.saldo_inicial}"
-        return resultado
-# def retirar_dinero(self,nombre_docente):
-#     print("haciendo la tarea de:",nombre_docente)
-# def ver_estado_de_cuenta(self):
-#     print("terminando la tarea anterior")
 
-rocio=banco("rocio","lobo",76004955,12345558866,100)
-# print(rocio.depositar(30))
-print(rocio.saldo_inicial)
+    def depositar(self, monto):
+        self.saldo += monto
+        print(f"Depósito de {monto} realizado. Saldo actual: {self.saldo}")
+
+    def retirar(self, monto):
+        if self.saldo >= monto:
+            self.saldo -= monto
+            print(f"Retiro de {monto} realizado. Saldo actual: {self.saldo}")
+        else:
+            print("Fondos insuficientes.")
+
+    def ver_estado_cuenta(self):
+        print("----- Estado de Cuenta -----")
+        print(f"Nombre: {self.nombre} {self.apellido}")
+        print(f"DNI: {self.dni}")
+        print(f"Número de Cuenta: {self.numero_cuenta}")
+        print(f"Saldo: {self.saldo}")
+        print("---------------------------")
+
+# Ejemplo de uso
+cliente1 = Banco("Juan", "Perez", "12345678A", "1234567890", 1000)
+
+cliente1.depositar(500)
+cliente1.retirar(200)
+cliente1.ver_estado_cuenta()
 
                               
-
 #Ejercicio 2
 #crear una clase de agencia
 #con sus atributos nombre y apellidos del pasajero dni numero de asiento fecha de viaje
@@ -52,6 +62,7 @@ class Agencia:
     def ingresar_origen(self, origen):
         self.origen = origen
         self.estado = "Origen Ingresado"
+
    def ingresar_destino(self, destino):
         self.destino = destino
         self.estado = "Destino Ingresado"
